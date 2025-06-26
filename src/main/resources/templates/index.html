@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple Entry App</title>
+</head>
+<body>
+<h2>Vlož text:</h2>
+<form th:action="@{/submit}" method="post" th:object="${newEntry}">
+    <input type="text" th:field="*{text}" required/>
+    <button type="submit">Odoslať</button>
+</form>
+
+<button onclick="location.href='/refresh'">Obnoviť tabuľku</button>
+
+<h2>Záznamy:</h2>
+<table border="1">
+    <tr><th>ID</th><th>Text</th><th>Vytvorené</th></tr>
+    <tr th:each="entry : ${entries}">
+        <td th:text="${entry.id}">1</td>
+        <td th:text="${entry.text}">Test</td>
+        <td th:text="${entry.createdAt}">Now</td>
+    </tr>
+</table>
+</body>
+</html>
