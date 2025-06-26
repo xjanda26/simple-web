@@ -5,9 +5,9 @@
 </head>
 <body>
 <h2>Vlož text:</h2>
-<form th:action="@{/submit}" method="post" th:object="${newEntry}">
-    <input type="text" th:field="*{text}" required/>
-    <button type="submit">Odoslať</button>
+<form action="/submit" method="post">
+  <input type="text" name="text" required/>
+  <button type="submit">Submit</button>
 </form>
 
 <button onclick="location.href='/refresh'">Obnoviť tabuľku</button>
