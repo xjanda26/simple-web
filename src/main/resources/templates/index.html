@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Vlož text:</h2>
-<form action="/submit" method="post">
+<form th:action="@{/submit}" method="post">
   <input type="text" name="text" required/>
   <button type="submit">Submit</button>
 </form>
